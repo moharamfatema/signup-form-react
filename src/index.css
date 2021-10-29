@@ -1,0 +1,19 @@
+
+/*desktop*/
+@media (min-width: 376px) {
+    #root{
+        background-image: url("/src/images/bg-intro-desktop.png");
+
+
+    }
+}
+@media (max-width: 375px){
+    #root{
+        background-image: url("/src/images/bg-intro-mobile.png");
+
+    }
+}
+#root{
+    background-color:hsl(0, 100%, 74%);
+    min-height: 100vh;
+}

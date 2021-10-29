@@ -1,0 +1,10 @@
+.formControl{
+    padding: 10px 20px;
+    font-weight: 500;
+}
+.button{
+background-color: hsl(154, 59%, 51%);
+    border: none;
+    border-bottom: 5px darkgreen;
+
+}
