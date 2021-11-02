@@ -2,7 +2,7 @@ import {useState} from "react";
 import {Card, Col, Container, Form, Image, Stack, Row, Button} from "react-bootstrap";
 import errorImage from '../images/icon-error.svg'
 import './Signup.scss'
-import validator from "validator/es";
+import validator from "validator"
 
 //working
 export default function Signup(){
@@ -28,19 +28,19 @@ export default function Signup(){
     const updateUser = (key,index,value) =>{
         const newArr = [...user];
         newArr[index][key]=value;
-        console.log(newArr)
+        //console.log(newArr)
         setUser(newArr);
 
     }
 
     const onChange = (e) =>{
         const i = user.findIndex(userInfo => userInfo.property == e.target.id);
-        console.log(i);
+        //console.log(i);
 
         updateUser('value',i,e.target.value);
         updateUser('error',i,false);
         updateUser('errmsg',i,'');
-        console.log(user[i].value)
+        //console.log(user[i].value)
     }
     const onSubmit = (e) =>{
         let goodtogo=true;
@@ -62,6 +62,7 @@ export default function Signup(){
             }if(goodtogo){
                 //send the data
                 //go somewhere
+                console.log("Good to go");
             }
         })
     }
@@ -80,13 +81,14 @@ export default function Signup(){
                                                 className={(user[i].error)?"formControl error":"formControl"}
                                                 onChange={onChange}
                                                 id={userInfo.property}
+                                                data-testid={userInfo.property}
                                             />
                                             {(user[i].error) ?
-                                                (<Image src={errorImage} className='errorImage'/>) :
+                                                (<Image alt='ERROR' src={errorImage} className='errorImage' data-testid={`errorimage${userInfo.property}`}/>) :
                                                 (<></>)
                                             }
                                             {(user[i].error) ?
-                                                (<Form.Label className={"error"}>{user[i].errmsg}</Form.Label>) :
+                                                (<Form.Label data-testid={`errmsg${userInfo.property}`} className={"error errmsg"}>{user[i].errmsg}</Form.Label>) :
                                                 (<></>)
                                             }
 
@@ -95,7 +97,7 @@ export default function Signup(){
                                 </Form.Group>
                         ))
                         }
-                        <Container><Button type="submit" onClick={onSubmit}>CLAIM YOUR FREE TRIAL</Button></Container>
+                        <Container><Button data-testid='submit' type="submit" onClick={onSubmit}>CLAIM YOUR FREE TRIAL</Button></Container>
 
                     </Stack>
 
