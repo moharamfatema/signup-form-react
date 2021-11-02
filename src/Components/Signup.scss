@@ -1,14 +1,26 @@
 $red: hsl(0, 100%, 74%);
 $grey:hsl(246, 25%, 77%);
+$purple:hsl(248, 32%, 49%);
+$dark: hsl(249, 10%, 26%);
+$shadow-red:#d96f73;
+
 .formControl {
-  padding: 10px 20px;
   font-weight: 500;
+  width: 100%;
+  &:focus{
+    border: 1px solid $dark !important;
+    caret-color: $purple;
+  }
 }
 Button {
   background-color: hsl(154, 59%, 51%) !important;
     border: none !important;
     border-bottom: 3px solid #36b67d !important;
   width: 100%;
+  &:hover{
+    background-color: #81d6d5 !important;
+    border-bottom: 3px solid #6bcca1 !important;
+ }
 }
 .hide{
   display:none;
@@ -36,4 +48,22 @@ Button {
 .link{
   color: $red;
   font-weight: bold;
+  &:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.card{
+  box-shadow: 0 7px $shadow-red ;
+  margin: 60px 10px 60px 10px;
+  form{
+    padding: 10px 1vw;
+    margin: 5px;
+    width: 100%;
+    .container{
+      padding: 0;
+
+    }
+  }
 }
