@@ -8,7 +8,7 @@ function App() {
   return (
       <Container id={"main-container"} >
           <Row>
-              <Col>
+              <Col id='formcol'>
                   <div id="description">
                       <h1>Learn to code by watching others</h1>
                       <p>See how experienced developers solve problems in real-time.

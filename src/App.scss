@@ -31,11 +31,15 @@ Form{
         }
     }
 }
+#formcol{
+    flex-shrink: 0;
+    width: 100vw;
+}
 
 .card{
     box-shadow: 0 15px $shadow-red ;
 }
-@media (max-width: 375px) {
+@media (max-width: 760px) {
     #description{
         text-align: center;
         margin: 10vh  20px 0 20px;
@@ -44,11 +48,16 @@ Form{
             margin: 20px 0 0 0;
         }
     }
+
 }
-@media(min-width: 379px) {
+@media(min-width: 760px) {
     .row {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
 }
+.col{
+        flex-shrink: 0;
+        min-width: 300px;
+    }
