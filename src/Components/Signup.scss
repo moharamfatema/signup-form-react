@@ -1,14 +1,14 @@
 $red: hsl(0, 100%, 74%);
-
+$grey:hsl(246, 25%, 77%);
 .formControl {
   padding: 10px 20px;
   font-weight: 500;
 }
-.button{
-  background-color: hsl(154, 59%, 51%);
-    border: none;
-    border-bottom: 10px darkgreen;
-
+Button {
+  background-color: hsl(154, 59%, 51%) !important;
+    border: none !important;
+    border-bottom: 3px solid #36b67d !important;
+  width: 100%;
 }
 .hide{
   display:none;
@@ -17,7 +17,9 @@ $red: hsl(0, 100%, 74%);
 
 .error{
     color: $red;
-
+  &.formControl
+  {  border: 3px solid $red ;
+    border-radius: 5px;}
   }
 
 .errorImage{
@@ -26,6 +28,12 @@ $red: hsl(0, 100%, 74%);
   margin: 5px;
 }
 
-.error .formControl
-{  border: 3px solid $red ;
-  border-radius: 5px;}
+.littleText{
+  color: $grey;
+  font-size: small;
+  text-align: center;
+  }
+.link{
+  color: $red;
+  font-weight: bold;
+}

@@ -1,6 +1,6 @@
-import './App.css';
+import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Col, Container, Row} from "react-bootstrap";
+import {Card, Col, Container, Row} from "react-bootstrap";
 
 import Signup from "./Components/Signup";
 
@@ -24,6 +24,14 @@ function App() {
                   </div>
               </Col>
               <Col>
+                  <Card className='infocard'>
+                      <Card.Body>
+                          <Card.Text>
+                              <span className='bold'>Try it free 7 days </span>
+                              <span className='regular'>then $20/mo. thereafter</span>
+                          </Card.Text>
+                      </Card.Body>
+                  </Card>
                   <Signup/>
               </Col>
           </Row>
