@@ -102,7 +102,7 @@ export default function Signup(){
                     </Stack>
 
                 </Form>
-                <Card.Text className='littleText'>
+                <Card.Text className='littleText' data-testid='termsAndServices'>
                     By clicking the button, you are agreeing to our
                     <span className='link'> Terms and Services</span>
                 </Card.Text>
