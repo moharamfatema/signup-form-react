@@ -1,16 +1,19 @@
 import {useState} from "react";
-import {Card, Col, Container, Form, Image, Stack, Row, Button} from "react-bootstrap";
+import {Card, Container, Form, Image, Stack, Button} from "react-bootstrap";
 import errorImage from '../images/icon-error.svg'
 import './Signup.scss'
 import validator from "validator"
 
-//working
+//tested - working
 export default function Signup(){
+    //set initial values
     const [user,setUser] = useState([{property:"firstName",value:"",error:false,errmsg:""},
         {property:"lastName",value:"",error:false,errmsg:""},
         {property: "email",value:"",error:false,errmsg:""},
         {property:"password",value:"",error:false,errmsg:""}
     ])
+
+    //returns a user friendly text
     const getString = (key)=>{
         switch (key){
             case 0:
@@ -21,10 +24,12 @@ export default function Signup(){
                 return 'E-mail Address';
             case 3:
                 return 'Password';
+            default:
+                return 'undefined';
         }
     }
 
-
+    //updates the user arrays with setUser
     const updateUser = (key,index,value) =>{
         const newArr = [...user];
         newArr[index][key]=value;
@@ -33,6 +38,7 @@ export default function Signup(){
 
     }
 
+    //accepts changing the input and updates user
     const onChange = (e) =>{
         const i = user.findIndex(userInfo => userInfo.property == e.target.id);
         //console.log(i);
@@ -42,8 +48,10 @@ export default function Signup(){
         updateUser('errmsg',i,'');
         //console.log(user[i].value)
     }
+
+    //checks validity of input and displays the suitable errors
     const onSubmit = (e) =>{
-        let goodtogo=true;
+        let goodtogo=true; //flag for errors
         e.preventDefault();
         //check if empty and valid email
         user.map((userprop,j)=>{
@@ -71,6 +79,7 @@ export default function Signup(){
             <Card.Body>
                 <Form onSubmit={onSubmit} data-testid='signupForm'>
                     <Stack gap={3}>
+                        {/*mapping through all user attributes, returning input fields and an error if needed*/}
                         {user.map((userInfo,i) =>(
                                 <Form.Group className={"formGroup"} id={`${userInfo.property}`} key={i}>
                                     <Container >
