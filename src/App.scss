@@ -20,7 +20,7 @@ Form{
 }
 .infocard{
     background:$purple !important;
-    margin-outside: 10vh 0;
+    margin-outside: 10vh 0 1vh 0;
     text-align: center;
     box-shadow: 0 5px $shadow-red ;
     padding: 0 5px;
@@ -61,3 +61,12 @@ Form{
         flex-shrink: 0;
         min-width: 300px;
     }
+#description{
+    h1{font-weight: bolder}
+    font-size: xx-large;
+    padding: 15px;
+    p{
+        font-weight: normal;
+        font-size: medium;
+    }
+}
