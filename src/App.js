@@ -9,7 +9,7 @@ function App() {
       <Container id={"main-container"} >
           <Row>
               <Col id='formcol'>
-                  <div id="description">
+                  <div id="description" data-testid='description'>
                       <h1>Learn to code by watching others</h1>
                       <p>See how experienced developers solve problems in real-time.
                           Watching scripted
@@ -17,7 +17,7 @@ function App() {
                   </div>
               </Col>
               <Col>
-                  <Card className='infocard'>
+                  <Card className='infocard' data-testid ='pricing'>
                       <Card.Body>
                           <Card.Text>
                               <span className='bold'>Try it free 7 days </span>

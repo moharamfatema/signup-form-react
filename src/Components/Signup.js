@@ -69,10 +69,10 @@ export default function Signup(){
     return(
         <Card>
             <Card.Body>
-                <Form onSubmit={onSubmit}>
+                <Form onSubmit={onSubmit} data-testid='signupForm'>
                     <Stack gap={3}>
                         {user.map((userInfo,i) =>(
-                                <Form.Group className={"formGroup"} id={`${userInfo.property}`}>
+                                <Form.Group className={"formGroup"} id={`${userInfo.property}`} key={i}>
                                     <Container >
                                         <span>
                                             <Form.Control
